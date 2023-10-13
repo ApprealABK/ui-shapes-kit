@@ -3,44 +3,47 @@ using UnityEditor;
 
 using ShapeProperties = ThisOtherThing.UI.GeoUtils.ShapeProperties;
 
-[CustomPropertyDrawer(typeof(ShapeProperties))]
-public class ShapePropertiesDrawer : PropertyDrawer
+namespace io.github.apprealabk.ui.shapes.kit
 {
-	public override void OnGUI (Rect position, SerializedProperty property, GUIContent label)
-	{
-		position.height = EditorGUIUtility.singleLineHeight;
-		property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, label);
+    [CustomPropertyDrawer(typeof(ShapeProperties))]
+    public class ShapePropertiesDrawer : PropertyDrawer
+    {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            position.height = EditorGUIUtility.singleLineHeight;
+            property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, label);
 
-		if (!property.isExpanded)
-			return;
+            if (!property.isExpanded)
+                return;
 
-		EditorGUI.BeginProperty(position, label, property);
+            EditorGUI.BeginProperty(position, label, property);
 
-//		ShapeProperties shapeProperties = 
-//			(ShapeProperties)fieldInfo.GetValue(property.serializedObject.targetObject);
+            //		ShapeProperties shapeProperties = 
+            //			(ShapeProperties)fieldInfo.GetValue(property.serializedObject.targetObject);
 
-		var indent = EditorGUI.indentLevel;
-		EditorGUI.indentLevel = 1;
+            var indent = EditorGUI.indentLevel;
+            EditorGUI.indentLevel = 1;
 
-		Rect propertyPosition = new Rect (position.x, position.y + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
+            Rect propertyPosition = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight);
 
-		EditorGUI.PropertyField(propertyPosition, property.FindPropertyRelative("FillColor"), new GUIContent("Color"));
+            EditorGUI.PropertyField(propertyPosition, property.FindPropertyRelative("FillColor"), new GUIContent("Color"));
 
-		propertyPosition.y += EditorGUIUtility.singleLineHeight * 1.25f;
+            propertyPosition.y += EditorGUIUtility.singleLineHeight * 1.25f;
 
-		EditorGUI.indentLevel = indent;
-		EditorGUI.EndProperty();
-	}
+            EditorGUI.indentLevel = indent;
+            EditorGUI.EndProperty();
+        }
 
-	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-	{
-		if (!property.isExpanded)
-		{
-			return EditorGUIUtility.singleLineHeight;
-		}
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            if (!property.isExpanded)
+            {
+                return EditorGUIUtility.singleLineHeight;
+            }
 
-		float height = EditorGUIUtility.singleLineHeight * 2.0f;
+            float height = EditorGUIUtility.singleLineHeight * 2.0f;
 
-		return height;
-	}
+            return height;
+        }
+    }
 }

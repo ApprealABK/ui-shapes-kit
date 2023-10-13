@@ -4,47 +4,50 @@ using UnityEditor.UI;
 
 using PixelLine = ThisOtherThing.UI.Shapes.PixelLine;
 
-[CustomEditor(typeof(PixelLine))]
-[CanEditMultipleObjects]
-public class PixelLineEditor : GraphicEditor
+namespace io.github.apprealabk.ui.shapes.kit
 {
-	protected SerializedProperty colorProp;
-	protected SerializedProperty materialProp;
-	protected SerializedProperty raycastTargetProp;
+    [CustomEditor(typeof(PixelLine))]
+    [CanEditMultipleObjects]
+    public class PixelLineEditor : GraphicEditor
+    {
+        protected SerializedProperty colorProp;
+        protected SerializedProperty materialProp;
+        protected SerializedProperty raycastTargetProp;
 
-	protected SerializedProperty lineWeightProp;
-	protected SerializedProperty snappedPropertiesProp;
+        protected SerializedProperty lineWeightProp;
+        protected SerializedProperty snappedPropertiesProp;
 
-	protected override void OnEnable()
-	{
-		colorProp = serializedObject.FindProperty("m_Color");
-		materialProp = serializedObject.FindProperty("m_Material");
-		raycastTargetProp = serializedObject.FindProperty("m_RaycastTarget");
+        protected override void OnEnable()
+        {
+            colorProp = serializedObject.FindProperty("m_Color");
+            materialProp = serializedObject.FindProperty("m_Material");
+            raycastTargetProp = serializedObject.FindProperty("m_RaycastTarget");
 
-		lineWeightProp = serializedObject.FindProperty("LineWeight");
-		snappedPropertiesProp = serializedObject.FindProperty("SnappedProperties");
-	}
+            lineWeightProp = serializedObject.FindProperty("LineWeight");
+            snappedPropertiesProp = serializedObject.FindProperty("SnappedProperties");
+        }
 
-	protected override void OnDisable()
-	{
-		Tools.hidden = false;
-	}
+        protected override void OnDisable()
+        {
+            Tools.hidden = false;
+        }
 
-	public override void OnInspectorGUI()
-	{
-		serializedObject.Update();
+        public override void OnInspectorGUI()
+        {
+            serializedObject.Update();
 
-		EditorGUILayout.PropertyField(colorProp);
-		EditorGUILayout.PropertyField(materialProp);
-		EditorGUILayout.PropertyField(raycastTargetProp);
-		EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(colorProp);
+            EditorGUILayout.PropertyField(materialProp);
+            EditorGUILayout.PropertyField(raycastTargetProp);
+            EditorGUILayout.Space();
 
-		EditorGUILayout.PropertyField(lineWeightProp);
+            EditorGUILayout.PropertyField(lineWeightProp);
 
-		EditorGUILayout.Space();
+            EditorGUILayout.Space();
 
-		EditorGUILayout.PropertyField(snappedPropertiesProp, true);
+            EditorGUILayout.PropertyField(snappedPropertiesProp, true);
 
-		serializedObject.ApplyModifiedProperties();
-	}
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
 }

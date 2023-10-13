@@ -4,21 +4,24 @@ using UnityEditor.UI;
 
 using EmptyFillRect = ThisOtherThing.UI.Shapes.EmptyFillRect;
 
-[CustomEditor(typeof(EmptyFillRect))]
-[CanEditMultipleObjects]
-public class EmptyFillRectEditor : GraphicEditor
+namespace io.github.apprealabk.ui.shapes.kit
 {
-	protected override void OnEnable()
-	{
-		base.OnEnable();
-	}
+    [CustomEditor(typeof(EmptyFillRect))]
+    [CanEditMultipleObjects]
+    public class EmptyFillRectEditor : GraphicEditor
+    {
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+        }
 
-	public override void OnInspectorGUI()
-	{
-		serializedObject.Update();
+        public override void OnInspectorGUI()
+        {
+            serializedObject.Update();
 
-		RaycastControlsGUI();
+            RaycastControlsGUI();
 
-		serializedObject.ApplyModifiedProperties();
-	}
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
 }

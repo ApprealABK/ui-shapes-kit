@@ -5,245 +5,248 @@ using System.Collections;
 using System.Reflection;
 using System;
 
-[CustomEditor(typeof(ThisOtherThing.Utils.Animation.ValueSetter2))]
-public class FunctionDemoEditor2 : Editor
+namespace io.github.apprealabk.ui.shapes.kit
 {
-	static FieldInfo[] targetFields;
-	static string[] targetFieldNames;
-	static string[] fieldNames;
+    [CustomEditor(typeof(ThisOtherThing.Utils.Animation.ValueSetter2))]
+    public class FunctionDemoEditor2 : Editor
+    {
+        static FieldInfo[] targetFields;
+        static string[] targetFieldNames;
+        static string[] fieldNames;
 
-	SerializedProperty floatValueProp;
-	SerializedProperty colorValueProp;
-	//	SerializedProperty boolValueProp;
+        SerializedProperty floatValueProp;
+        SerializedProperty colorValueProp;
+        //	SerializedProperty boolValueProp;
 
-	SerializedProperty isInArrayProp;
-	SerializedProperty arrayItemIndexProp;
-	SerializedProperty isInClassInArrayProp;
-
-
-	string[] fieldTypes = new string[] {
-		"Float",
-		"Bool",
-		"Color"
-	};
-
-	void OnEnable()
-	{
-		floatValueProp = serializedObject.FindProperty("FloatValue");
-		colorValueProp = serializedObject.FindProperty("ColorValue");
-		//		boolValueProp = serializedObject.FindProperty("BoolValue");
-
-		isInArrayProp = serializedObject.FindProperty("IsInArray");
-		arrayItemIndexProp = serializedObject.FindProperty("ArrayItemIndex");
-		isInClassInArrayProp = serializedObject.FindProperty("IsInClass");
-	}
-
-	public override void OnInspectorGUI()
-	{
-		//		DrawDefaultInspector();
-
-		ThisOtherThing.Utils.Animation.ValueSetter2 obj = target as ThisOtherThing.Utils.Animation.ValueSetter2;
-		var targetType = obj.gameObject.GetComponent<ThisOtherThing.UI.Shapes.IShape>().GetType ();
-
-		obj.FieldType = EditorGUILayout.Popup(obj.FieldType, fieldTypes);
-
-		EditorGUILayout.PropertyField(isInArrayProp);
-
-		if (obj.IsInArray)
-		{
-			EditorGUILayout.PropertyField(arrayItemIndexProp);
-		}
-
-		EditorGUILayout.PropertyField(isInClassInArrayProp);
-
-		EditorGUILayout.Space();
-
-		Type fieldType;
-		switch (obj.FieldType)
-		{
-		case 0:
-			fieldType = typeof(float);
-			break;
-		case 1:
-			fieldType = typeof(bool);
-			break;
-		case 2:
-			fieldType = typeof(Color);
-			break;
-		default:
-			fieldType = typeof(float);
-			break;
-		}
-
-		var targetFieldInfos = targetType
-			.GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding);
-
-		targetFieldNames = targetFieldInfos
-			.Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing"))
-			.Select(x => x.Name.ToString())
-			.ToArray();
-
-		if (obj != null)
-		{
-			int fieldIndex;
-
-			int targetFieldIndex = GetIndexInNameArray(targetFieldNames, obj.TargetFieldName);
-
-			targetFieldIndex = EditorGUILayout.Popup(targetFieldIndex, targetFieldNames);
-
-			obj.TargetTypeName = targetFieldInfos[targetFieldIndex].FieldType.ToString();
-			obj.TargetFieldName = targetFieldNames[targetFieldIndex];
+        SerializedProperty isInArrayProp;
+        SerializedProperty arrayItemIndexProp;
+        SerializedProperty isInClassInArrayProp;
 
 
-			// set field data
-			var fields = targetFieldInfos[targetFieldIndex].FieldType
-				.GetFields (ThisOtherThing.Utils.Animation.ValueSetter.binding) // Instance methods, both public and private/protected
-				.Where (x => !x.Name.Contains ("Adjusted"));
+        string[] fieldTypes = new string[] {
+        "Float",
+        "Bool",
+        "Color"
+    };
 
-			if (obj.IsInArray)
-			{
-				fields = fields.Where (x => x.FieldType.IsArray);
-			}
-			else
-			{
-				fields = fields.Where (x => x.FieldType == fieldType);
-			}
+        void OnEnable()
+        {
+            floatValueProp = serializedObject.FindProperty("FloatValue");
+            colorValueProp = serializedObject.FindProperty("ColorValue");
+            //		boolValueProp = serializedObject.FindProperty("BoolValue");
+
+            isInArrayProp = serializedObject.FindProperty("IsInArray");
+            arrayItemIndexProp = serializedObject.FindProperty("ArrayItemIndex");
+            isInClassInArrayProp = serializedObject.FindProperty("IsInClass");
+        }
+
+        public override void OnInspectorGUI()
+        {
+            //		DrawDefaultInspector();
+
+            ThisOtherThing.Utils.Animation.ValueSetter2 obj = target as ThisOtherThing.Utils.Animation.ValueSetter2;
+            var targetType = obj.gameObject.GetComponent<ThisOtherThing.UI.Shapes.IShape>().GetType();
+
+            obj.FieldType = EditorGUILayout.Popup(obj.FieldType, fieldTypes);
+
+            EditorGUILayout.PropertyField(isInArrayProp);
+
+            if (obj.IsInArray)
+            {
+                EditorGUILayout.PropertyField(arrayItemIndexProp);
+            }
+
+            EditorGUILayout.PropertyField(isInClassInArrayProp);
+
+            EditorGUILayout.Space();
+
+            Type fieldType;
+            switch (obj.FieldType)
+            {
+                case 0:
+                    fieldType = typeof(float);
+                    break;
+                case 1:
+                    fieldType = typeof(bool);
+                    break;
+                case 2:
+                    fieldType = typeof(Color);
+                    break;
+                default:
+                    fieldType = typeof(float);
+                    break;
+            }
+
+            var targetFieldInfos = targetType
+                .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding);
+
+            targetFieldNames = targetFieldInfos
+                .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing"))
+                .Select(x => x.Name.ToString())
+                .ToArray();
+
+            if (obj != null)
+            {
+                int fieldIndex;
+
+                int targetFieldIndex = GetIndexInNameArray(targetFieldNames, obj.TargetFieldName);
+
+                targetFieldIndex = EditorGUILayout.Popup(targetFieldIndex, targetFieldNames);
+
+                obj.TargetTypeName = targetFieldInfos[targetFieldIndex].FieldType.ToString();
+                obj.TargetFieldName = targetFieldNames[targetFieldIndex];
 
 
-			fieldNames = fields
-				.Select(x => x.Name)
-				.ToArray();
+                // set field data
+                var fields = targetFieldInfos[targetFieldIndex].FieldType
+                    .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding) // Instance methods, both public and private/protected
+                    .Where(x => !x.Name.Contains("Adjusted"));
 
-			fieldIndex = GetIndexInNameArray(fieldNames, obj.FieldName);
+                if (obj.IsInArray)
+                {
+                    fields = fields.Where(x => x.FieldType.IsArray);
+                }
+                else
+                {
+                    fields = fields.Where(x => x.FieldType == fieldType);
+                }
 
-			if (fieldNames != null && fieldNames.Length > 0)
-			{
-				obj.FieldName = fieldNames[EditorGUILayout.Popup(fieldIndex, fieldNames)];
-			}
 
-			if (obj.IsInArray)
-			{
-				FieldInfo fieldNameInfo = targetFieldInfos[targetFieldIndex].FieldType.GetField(obj.FieldName);
+                fieldNames = fields
+                    .Select(x => x.Name)
+                    .ToArray();
 
-				if (fieldNameInfo == null)
-				{
-					serializedObject.ApplyModifiedProperties();
-					return;
-				}
+                fieldIndex = GetIndexInNameArray(fieldNames, obj.FieldName);
 
-				Type arrayFieldType = fieldNameInfo.FieldType.GetElementType();
+                if (fieldNames != null && fieldNames.Length > 0)
+                {
+                    obj.FieldName = fieldNames[EditorGUILayout.Popup(fieldIndex, fieldNames)];
+                }
 
-				string[] arrayFieldNames = arrayFieldType
-					.GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
-					.Where (x => x.FieldType == fieldType)
-					.Select(x => x.Name)
-					.ToArray();
+                if (obj.IsInArray)
+                {
+                    FieldInfo fieldNameInfo = targetFieldInfos[targetFieldIndex].FieldType.GetField(obj.FieldName);
 
-				int arrayFieldIndex = GetIndexInNameArray(arrayFieldNames, obj.ArrayFieldName);
+                    if (fieldNameInfo == null)
+                    {
+                        serializedObject.ApplyModifiedProperties();
+                        return;
+                    }
 
-				if (!obj.IsInClass)
-				{
-					if (arrayFieldNames != null && arrayFieldNames.Length > 0)
-					{
-						obj.ArrayFieldName = arrayFieldNames[EditorGUILayout.Popup(arrayFieldIndex, arrayFieldNames)];
-					}
-				}
-				else
-				{
-					int targetClassFieldIndex = 0;
+                    Type arrayFieldType = fieldNameInfo.FieldType.GetElementType();
 
-					var targetClassFields = arrayFieldType
-						.GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
-						.Where (x => x.FieldType.IsClass)
-						.Where (x => x.FieldType.Namespace.StartsWith("ThisOtherThing"));
+                    string[] arrayFieldNames = arrayFieldType
+                        .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .Where(x => x.FieldType == fieldType)
+                        .Select(x => x.Name)
+                        .ToArray();
 
-					string[] targetClassFieldNames = targetClassFields
-						.Select(x => x.Name)
-						.ToArray();
+                    int arrayFieldIndex = GetIndexInNameArray(arrayFieldNames, obj.ArrayFieldName);
 
-					if (targetClassFieldNames.Length > 0)
-					{
-						targetClassFieldIndex = GetIndexInNameArray(targetClassFieldNames, obj.TargetClassFieldName);
+                    if (!obj.IsInClass)
+                    {
+                        if (arrayFieldNames != null && arrayFieldNames.Length > 0)
+                        {
+                            obj.ArrayFieldName = arrayFieldNames[EditorGUILayout.Popup(arrayFieldIndex, arrayFieldNames)];
+                        }
+                    }
+                    else
+                    {
+                        int targetClassFieldIndex = 0;
 
-						obj.TargetClassFieldName = targetClassFieldNames[EditorGUILayout.Popup(targetClassFieldIndex, targetClassFieldNames)];
+                        var targetClassFields = arrayFieldType
+                            .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                            .Where(x => x.FieldType.IsClass)
+                            .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing"));
 
-						var classFieldNames = arrayFieldType.
-							GetField(obj.TargetClassFieldName, ThisOtherThing.Utils.Animation.ValueSetter.binding)
-							.FieldType
-							.GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
-							.Where (x => x.FieldType == fieldType)
-							.Select(x => x.Name)
-							.ToArray();
+                        string[] targetClassFieldNames = targetClassFields
+                            .Select(x => x.Name)
+                            .ToArray();
 
-						int classFieldIndex = GetIndexInNameArray(classFieldNames, obj.ClassFieldName);
+                        if (targetClassFieldNames.Length > 0)
+                        {
+                            targetClassFieldIndex = GetIndexInNameArray(targetClassFieldNames, obj.TargetClassFieldName);
 
-						if (classFieldNames.Length > 0)
-						{
-							obj.ClassFieldName = classFieldNames[EditorGUILayout.Popup(classFieldIndex, classFieldNames)];
-						}
-					}
-				}
-			}
-			else if (obj.IsInClass)
-			{
-				Type targetFieldType = targetFieldInfos[targetFieldIndex].FieldType;
+                            obj.TargetClassFieldName = targetClassFieldNames[EditorGUILayout.Popup(targetClassFieldIndex, targetClassFieldNames)];
 
-				var fieldNames = targetFieldType
-					.GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
-					.Where (x => x.FieldType.IsClass)
-					.Where (x => x.FieldType.Namespace.StartsWith("ThisOtherThing"))
-					.Select(x => x.Name)
-					.ToArray();
+                            var classFieldNames = arrayFieldType.
+                                GetField(obj.TargetClassFieldName, ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                                .FieldType
+                                .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                                .Where(x => x.FieldType == fieldType)
+                                .Select(x => x.Name)
+                                .ToArray();
 
-				if (fieldNames.Length == 0)
-					return;
+                            int classFieldIndex = GetIndexInNameArray(classFieldNames, obj.ClassFieldName);
 
-				int index = GetIndexInNameArray(fieldNames, obj.TargetClassFieldName);
+                            if (classFieldNames.Length > 0)
+                            {
+                                obj.ClassFieldName = classFieldNames[EditorGUILayout.Popup(classFieldIndex, classFieldNames)];
+                            }
+                        }
+                    }
+                }
+                else if (obj.IsInClass)
+                {
+                    Type targetFieldType = targetFieldInfos[targetFieldIndex].FieldType;
 
-				obj.TargetClassFieldName = fieldNames[EditorGUILayout.Popup(index, fieldNames)];
+                    var fieldNames = targetFieldType
+                        .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .Where(x => x.FieldType.IsClass)
+                        .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing"))
+                        .Select(x => x.Name)
+                        .ToArray();
 
-				fieldNames = targetFieldInfos[targetFieldIndex].FieldType
-					.GetField(obj.TargetClassFieldName, ThisOtherThing.Utils.Animation.ValueSetter.binding)
-					.FieldType
-					.GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
-					.Where (x => x.FieldType == fieldType)
-					.Select(x => x.Name)
-					.ToArray();
+                    if (fieldNames.Length == 0)
+                        return;
 
-				if (fieldNames.Length == 0)
-					return;
+                    int index = GetIndexInNameArray(fieldNames, obj.TargetClassFieldName);
 
-				index = GetIndexInNameArray(fieldNames, obj.ClassFieldName);
-				obj.ClassFieldName = fieldNames[EditorGUILayout.Popup(index, fieldNames)];
-			}
+                    obj.TargetClassFieldName = fieldNames[EditorGUILayout.Popup(index, fieldNames)];
 
-			EditorGUILayout.Space();
+                    fieldNames = targetFieldInfos[targetFieldIndex].FieldType
+                        .GetField(obj.TargetClassFieldName, ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .FieldType
+                        .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .Where(x => x.FieldType == fieldType)
+                        .Select(x => x.Name)
+                        .ToArray();
 
-			if (obj.FieldType == 0 || obj.FieldType == 1)
-			{
-				EditorGUILayout.PropertyField(floatValueProp);
-			}
-			else if (obj.FieldType == 2)
-			{
-				EditorGUILayout.PropertyField(colorValueProp);
-			}
+                    if (fieldNames.Length == 0)
+                        return;
 
-			serializedObject.ApplyModifiedProperties();
-		}
-	}
+                    index = GetIndexInNameArray(fieldNames, obj.ClassFieldName);
+                    obj.ClassFieldName = fieldNames[EditorGUILayout.Popup(index, fieldNames)];
+                }
 
-	int GetIndexInNameArray(string[] names, string name)
-	{
-		try
-		{
-			return names
-				.Select((v, i) => new { Name = v, Index = i })
-				.First(x => x.Name == name)
-				.Index;
-		}
-		catch
-		{
-			return 0;
-		}
-	}
+                EditorGUILayout.Space();
+
+                if (obj.FieldType == 0 || obj.FieldType == 1)
+                {
+                    EditorGUILayout.PropertyField(floatValueProp);
+                }
+                else if (obj.FieldType == 2)
+                {
+                    EditorGUILayout.PropertyField(colorValueProp);
+                }
+
+                serializedObject.ApplyModifiedProperties();
+            }
+        }
+
+        int GetIndexInNameArray(string[] names, string name)
+        {
+            try
+            {
+                return names
+                    .Select((v, i) => new { Name = v, Index = i })
+                    .First(x => x.Name == name)
+                    .Index;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+    }
 }
