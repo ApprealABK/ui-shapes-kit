@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using ThisOtherThing.Utils;
+using MinAttribute = ThisOtherThing.Utils.MinAttribute;
 
 namespace ThisOtherThing
 {

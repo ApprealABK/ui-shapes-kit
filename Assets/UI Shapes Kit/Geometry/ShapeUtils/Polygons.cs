@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-using ThisOtherThing.Utils;
+using MinAttribute = ThisOtherThing.Utils.MinAttribute;
 
 namespace ThisOtherThing.UI.ShapeUtils
 {
