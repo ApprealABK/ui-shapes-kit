@@ -4,7 +4,7 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
-/Assets/AssetStoreTools*
+/Packages/com.unity.asset-store-tools/*
 
 # Rendered output
 *.mov
