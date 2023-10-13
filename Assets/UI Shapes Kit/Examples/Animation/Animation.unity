@@ -286,7 +286,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 3
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 232.74
         Height: 50
@@ -754,7 +754,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 6
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 50
         Height: 50
@@ -1008,7 +1008,6 @@ GameObject:
   - component: {fileID: 278660053}
   - component: {fileID: 278660052}
   - component: {fileID: 278660049}
-  - component: {fileID: 278660050}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1024,18 +1023,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278660048}
   m_Enabled: 1
---- !u!114 &278660050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278660048}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66fbd5ffe9b9d64da304996f1919f40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &278660052
 Camera:
   m_ObjectHideFlags: 0
@@ -1931,7 +1918,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 5
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 50
         Height: 50
@@ -1962,7 +1949,7 @@ MonoBehaviour:
       ShowHandles: 1
     - GeneratorData:
         Generator: 5
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 0
         Height: 50
@@ -2497,7 +2484,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 7
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 100
         Height: 100
@@ -2720,7 +2707,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 0
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 55.4
         Height: 57.5
@@ -2880,7 +2867,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 7
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 100
         Height: 100
@@ -3246,7 +3233,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 2
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 200
         Height: 200
@@ -3288,7 +3275,7 @@ MonoBehaviour:
       ShowHandles: 1
     - GeneratorData:
         Generator: 2
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 300
         Height: 300
@@ -3330,7 +3317,7 @@ MonoBehaviour:
       ShowHandles: 1
     - GeneratorData:
         Generator: 2
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 400
         Height: 400
@@ -3372,7 +3359,7 @@ MonoBehaviour:
       ShowHandles: 1
     - GeneratorData:
         Generator: 2
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 500
         Height: 500
@@ -3892,7 +3879,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 5
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: -400, y: 0}
         Width: 20
         Height: 20
@@ -3929,7 +3916,7 @@ MonoBehaviour:
       ShowHandles: 1
     - GeneratorData:
         Generator: 5
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 20
         Height: 20
@@ -5286,7 +5273,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 4
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 800
         Height: 350
@@ -5792,7 +5779,7 @@ MonoBehaviour:
     PointListProperties:
     - GeneratorData:
         Generator: 2
-        NeedsUpdate: 0
+        NeedsUpdate: 1
         Center: {x: 0, y: 0}
         Width: 350
         Height: 350
