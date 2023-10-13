@@ -5,7 +5,8 @@ using System.Collections;
 namespace ThisOtherThing.UI.Shapes
 {
 	[AddComponentMenu("UI/Shapes/Line", 30)]
-	public class Line : MaskableGraphic, IShape
+    [RequireComponent(typeof(CanvasRenderer))]
+    public class Line : MaskableGraphic, IShape
 	{
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();

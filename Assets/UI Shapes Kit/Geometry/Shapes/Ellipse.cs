@@ -5,7 +5,8 @@ using System.Collections;
 namespace ThisOtherThing.UI.Shapes
 {
 	[AddComponentMenu("UI/Shapes/Ellipse", 1)]
-	public class Ellipse : MaskableGraphic, IShape
+    [RequireComponent(typeof(CanvasRenderer))]
+    public class Ellipse : MaskableGraphic, IShape
 	{
 		public GeoUtils.OutlineShapeProperties ShapeProperties =
 			new GeoUtils.OutlineShapeProperties();

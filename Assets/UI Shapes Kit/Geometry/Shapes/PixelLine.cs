@@ -5,7 +5,8 @@ using System.Collections;
 namespace ThisOtherThing.UI.Shapes
 {
 	[AddComponentMenu("UI/Shapes/Pixel Line", 100)]
-	public class PixelLine : MaskableGraphic, IShape
+    [RequireComponent(typeof(CanvasRenderer))]
+    public class PixelLine : MaskableGraphic, IShape
 	{
 
 		public float LineWeight = 1.0f;

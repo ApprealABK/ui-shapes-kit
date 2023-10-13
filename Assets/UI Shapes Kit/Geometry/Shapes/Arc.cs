@@ -5,7 +5,8 @@ using System.Collections;
 namespace ThisOtherThing.UI.Shapes
 {
 	[AddComponentMenu("UI/Shapes/Arc", 50)]
-	public class Arc : MaskableGraphic, IShape
+    [RequireComponent(typeof(CanvasRenderer))]
+    public class Arc : MaskableGraphic, IShape
 	{
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();

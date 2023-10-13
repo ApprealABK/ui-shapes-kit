@@ -5,7 +5,8 @@ using System.Collections;
 namespace ThisOtherThing.UI.Shapes
 {
 	[AddComponentMenu("UI/Shapes/Rectangle", 1)]
-	public class Rectangle : MaskableGraphic, IShape
+    [RequireComponent(typeof(CanvasRenderer))]
+    public class Rectangle : MaskableGraphic, IShape
 	{
 
 		public GeoUtils.OutlineShapeProperties ShapeProperties =

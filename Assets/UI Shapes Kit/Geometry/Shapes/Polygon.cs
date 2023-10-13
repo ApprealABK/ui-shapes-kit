@@ -6,7 +6,8 @@ namespace ThisOtherThing.UI.Shapes
 {
 
 	[AddComponentMenu("UI/Shapes/Polygon", 30)]
-	public class Polygon : MaskableGraphic, IShape
+    [RequireComponent(typeof(CanvasRenderer))]
+    public class Polygon : MaskableGraphic, IShape
 	{
 
 		public GeoUtils.ShapeProperties ShapeProperties =
