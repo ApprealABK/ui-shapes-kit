@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 
 	[AddComponentMenu("UI/Shapes/Polygon", 30)]
@@ -13,19 +13,19 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();
 
-		public ShapeUtils.PointsList.PointListsProperties PointListsProperties =
-			new ShapeUtils.PointsList.PointListsProperties();
+		public PointsList.PointListsProperties PointListsProperties =
+			new PointsList.PointListsProperties();
 
-		public ShapeUtils.Polygons.PolygonProperties PolygonProperties =
-			new ShapeUtils.Polygons.PolygonProperties();
+		public Polygons.PolygonProperties PolygonProperties =
+			new Polygons.PolygonProperties();
 
 		public GeoUtils.ShadowsProperties ShadowProperties = new GeoUtils.ShadowsProperties();
 
 		public GeoUtils.AntiAliasingProperties AntiAliasingProperties = 
 			new GeoUtils.AntiAliasingProperties();
 
-		ShapeUtils.PointsList.PointsData[] pointsListData =
-			new ThisOtherThing.UI.ShapeUtils.PointsList.PointsData[] { new ShapeUtils.PointsList.PointsData()};
+		PointsList.PointsData[] pointsListData =
+			new PointsList.PointsData[] { new PointsList.PointsData()};
 		GeoUtils.EdgeGradientData edgeGradientData;
 
 		Rect pixelRect;
@@ -124,7 +124,7 @@ namespace ThisOtherThing.UI.Shapes
 								AntiAliasingProperties.Adjusted
 							);
 
-							ShapeUtils.Polygons.AddPolygon(
+							UI_ShapesKit.Polygons.AddPolygon(
 								ref vh,
 								PolygonProperties,
 								PointListsProperties.PointListProperties[i],
@@ -164,7 +164,7 @@ namespace ThisOtherThing.UI.Shapes
 							edgeGradientData.Reset();
 						}
 
-						ShapeUtils.Polygons.AddPolygon(
+						Polygons.AddPolygon(
 							ref vh,
 							PolygonProperties,
 							PointListsProperties.PointListProperties[i],

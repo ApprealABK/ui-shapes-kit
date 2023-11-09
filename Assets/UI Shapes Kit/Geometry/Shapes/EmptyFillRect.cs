@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 
 	[AddComponentMenu("UI/Shapes/Empty Fill Rect", 200)]

@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-using ThisOtherThing.Utils;
-using RoundingProperties = ThisOtherThing.UI.GeoUtils.RoundingProperties;
-using MinAttribute = ThisOtherThing.Utils.MinAttribute;
+using RoundingProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
+using MinAttribute = ThisOtherThing.Appreal.UI_ShapesKit.Utils.MinAttribute;
 
-namespace ThisOtherThing.UI.ShapeUtils
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	public class PointsList
 	{
@@ -424,8 +423,8 @@ namespace ThisOtherThing.UI.ShapeUtils
 
 				for ( int i = 0; i < numPositions; i++)
 				{
-					lineData.PositionNormals[i] = UI.GeoUtils.ZeroV2;
-					lineData.PositionTangents[i] = UI.GeoUtils.ZeroV2;
+					lineData.PositionNormals[i] = GeoUtils.ZeroV2;
+					lineData.PositionTangents[i] = GeoUtils.ZeroV2;
 				}
 
 				needsUpdate = true;
@@ -438,8 +437,8 @@ namespace ThisOtherThing.UI.ShapeUtils
 				lineData.TotalLength = 0.0f;
 
 				float distance;
-				Vector2 lastUnitTangent = UI.GeoUtils.ZeroV2;
-				Vector2 currentUnitTangent = UI.GeoUtils.ZeroV2;
+				Vector2 lastUnitTangent = GeoUtils.ZeroV2;
+				Vector2 currentUnitTangent = GeoUtils.ZeroV2;
 
 				// set data for first point
 				if (!lineData.IsClosed)

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using MinAttribute = ThisOtherThing.Utils.MinAttribute;
+using MinAttribute = ThisOtherThing.Appreal.UI_ShapesKit.Utils.MinAttribute;
 
-namespace ThisOtherThing
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	[CustomPropertyDrawer(typeof(MinAttribute))] 
 	public class MinDrawer : PropertyDrawer

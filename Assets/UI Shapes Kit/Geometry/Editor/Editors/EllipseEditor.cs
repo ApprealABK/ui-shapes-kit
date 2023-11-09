@@ -2,9 +2,7 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using Ellipse = ThisOtherThing.UI.Shapes.Ellipse;
-
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Ellipse))]
     [CanEditMultipleObjects]

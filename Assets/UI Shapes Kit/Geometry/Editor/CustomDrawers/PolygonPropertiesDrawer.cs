@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using PolygonProperties = ThisOtherThing.UI.ShapeUtils.Polygons.PolygonProperties;
+using PolygonProperties = ThisOtherThing.Appreal.UI_ShapesKit.Polygons.PolygonProperties;
 
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(PolygonProperties))]
     public class PolygonPropertiesDrawer : PropertyDrawer

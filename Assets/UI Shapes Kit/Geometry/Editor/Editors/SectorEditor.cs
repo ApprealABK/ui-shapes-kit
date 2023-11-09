@@ -2,9 +2,7 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using Sector = ThisOtherThing.UI.Shapes.Sector;
-
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Sector))]
     [CanEditMultipleObjects]

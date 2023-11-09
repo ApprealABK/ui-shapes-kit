@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Reflection;
 
-namespace ThisOtherThing.Utils.Animation
+namespace ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation
 {
 	[ExecuteInEditMode]
 	public class ValueSetter2 : MonoBehaviour
@@ -31,7 +31,7 @@ namespace ThisOtherThing.Utils.Animation
 		Color cachedColorValue;
 		bool cachedBoolValue;
 
-		ThisOtherThing.UI.Shapes.IShape target;
+		IShape target;
 		System.Object targetField;
 		FieldInfo fieldInfo;
 
@@ -79,7 +79,7 @@ namespace ThisOtherThing.Utils.Animation
 
 			if (target == null)
 			{
-				target = gameObject.GetComponent<ThisOtherThing.UI.Shapes.IShape>();
+				target = gameObject.GetComponent<IShape>();
 			}
 
 			targetField = target.GetType()

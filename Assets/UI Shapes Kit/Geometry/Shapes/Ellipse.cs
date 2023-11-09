@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	[AddComponentMenu("UI/Shapes/Ellipse", 1)]
     [RequireComponent(typeof(CanvasRenderer))]
@@ -11,8 +11,8 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.OutlineShapeProperties ShapeProperties =
 			new GeoUtils.OutlineShapeProperties();
 
-		public ShapeUtils.Ellipses.EllipseProperties EllipseProperties =
-			new ShapeUtils.Ellipses.EllipseProperties();
+		public Ellipses.EllipseProperties EllipseProperties =
+			new Ellipses.EllipseProperties();
 
 		public GeoUtils.OutlineProperties OutlineProperties = 
 			new GeoUtils.OutlineProperties();
@@ -55,7 +55,7 @@ namespace ThisOtherThing.UI.Shapes
 
 			Rect pixelRect = RectTransformUtility.PixelAdjustRect(rectTransform, canvas);
 
-			ShapeUtils.Ellipses.SetRadius(
+			Ellipses.SetRadius(
 				ref radius,
 				pixelRect.width,
 				pixelRect.height,
@@ -79,7 +79,7 @@ namespace ThisOtherThing.UI.Shapes
 							AntiAliasingProperties.Adjusted
 						);
 
-						ShapeUtils.Ellipses.AddCircle(
+						Ellipses.AddCircle(
 							ref vh,
 							ShadowProperties.GetCenterOffset(pixelRect.center, i),
 							radius,
@@ -108,7 +108,7 @@ namespace ThisOtherThing.UI.Shapes
 					edgeGradientData.Reset();
 				}
 
-				ShapeUtils.Ellipses.AddCircle(
+				Ellipses.AddCircle(
 					ref vh,
 					(Vector3)pixelRect.center,
 					radius,
@@ -133,7 +133,7 @@ namespace ThisOtherThing.UI.Shapes
 							AntiAliasingProperties.Adjusted
 						);
 
-						ShapeUtils.Ellipses.AddRing(
+						Ellipses.AddRing(
 							ref vh,
 							ShadowProperties.GetCenterOffset(pixelRect.center, i),
 							radius,
@@ -165,7 +165,7 @@ namespace ThisOtherThing.UI.Shapes
 					edgeGradientData.Reset();
 				}
 
-				ShapeUtils.Ellipses.AddRing(
+				Ellipses.AddRing(
 					ref vh,
 					(Vector3)pixelRect.center,
 					radius,

@@ -2,9 +2,7 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using EdgeGradient = ThisOtherThing.UI.Shapes.EdgeGradient;
-
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(EdgeGradient))]
     [CanEditMultipleObjects]

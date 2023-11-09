@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	[AddComponentMenu("UI/Shapes/Arc", 50)]
     [RequireComponent(typeof(CanvasRenderer))]
@@ -11,17 +11,17 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();
 
-		public ShapeUtils.Ellipses.EllipseProperties EllipseProperties =
-			new ShapeUtils.Ellipses.EllipseProperties();
+		public Ellipses.EllipseProperties EllipseProperties =
+			new Ellipses.EllipseProperties();
 
-		public ShapeUtils.Arcs.ArcProperties ArcProperties = 
-			new ShapeUtils.Arcs.ArcProperties();
+		public Arcs.ArcProperties ArcProperties = 
+			new Arcs.ArcProperties();
 
-		public ShapeUtils.Lines.LineProperties LineProperties =
-			new ShapeUtils.Lines.LineProperties();
-		public ShapeUtils.PointsList.PointListProperties PointListProperties =
-				new ShapeUtils.PointsList.PointListProperties();
-		ShapeUtils.PointsList.PointsData PointsData = new ShapeUtils.PointsList.PointsData();
+		public Lines.LineProperties LineProperties =
+			new Lines.LineProperties();
+		public PointsList.PointListProperties PointListProperties =
+				new PointsList.PointListProperties();
+		PointsList.PointsData PointsData = new PointsList.PointsData();
 
 		public GeoUtils.OutlineProperties OutlineProperties = 
 			new GeoUtils.OutlineProperties();
@@ -38,7 +38,7 @@ namespace ThisOtherThing.UI.Shapes
 
 		protected override void OnEnable() {
 			PointListProperties.GeneratorData.Generator =
-				ShapeUtils.PointsList.PointListGeneratorData.Generators.Round;
+				PointsList.PointListGeneratorData.Generators.Round;
 
 			PointListProperties.GeneratorData.Center.x = 0.0f;
 			PointListProperties.GeneratorData.Center.y = 0.0f;
@@ -74,7 +74,7 @@ namespace ThisOtherThing.UI.Shapes
 			OutlineProperties.UpdateAdjusted();
 			ShadowProperties.UpdateAdjusted();
 
-			ShapeUtils.Ellipses.SetRadius(
+			Ellipses.SetRadius(
 				ref radius,
 				pixelRect.width,
 				pixelRect.height,
@@ -92,17 +92,17 @@ namespace ThisOtherThing.UI.Shapes
 			PointListProperties.GeneratorData.Length = ArcProperties.Length;
 
 			switch (ArcProperties.Direction) {
-				case ShapeUtils.Arcs.ArcProperties.ArcDirection.Forward:
+				case Arcs.ArcProperties.ArcDirection.Forward:
 					PointListProperties.GeneratorData.Direction = 1.0f;
 					PointListProperties.GeneratorData.FloatStartOffset = EllipseProperties.BaseAngle * 0.5f;
 					break;
 
-				case ShapeUtils.Arcs.ArcProperties.ArcDirection.Centered:
+				case Arcs.ArcProperties.ArcDirection.Centered:
 					PointListProperties.GeneratorData.Direction = -1.0f;
 					PointListProperties.GeneratorData.FloatStartOffset = EllipseProperties.BaseAngle * 0.5f + (ArcProperties.Length * 0.5f);
 					break;
 
-				case ShapeUtils.Arcs.ArcProperties.ArcDirection.Backward:
+				case Arcs.ArcProperties.ArcDirection.Backward:
 					PointListProperties.GeneratorData.Direction = -1.0f;
 					PointListProperties.GeneratorData.FloatStartOffset = EllipseProperties.BaseAngle * 0.5f;
 					break;
@@ -148,7 +148,7 @@ namespace ThisOtherThing.UI.Shapes
 							AntiAliasingProperties.Adjusted
 						);
 
-						ShapeUtils.Arcs.AddSegment(
+						Arcs.AddSegment(
 							ref vh,
 							ShadowProperties.GetCenterOffset(pixelRect.center, i),
 							radius,
@@ -172,9 +172,9 @@ namespace ThisOtherThing.UI.Shapes
 							AntiAliasingProperties.Adjusted
 						);
 
-						if (LineProperties.LineCap == ShapeUtils.Lines.LineProperties.LineCapTypes.Close)
+						if (LineProperties.LineCap == Lines.LineProperties.LineCapTypes.Close)
 						{
-							ShapeUtils.Arcs.AddArcRing(
+							Arcs.AddArcRing(
 								ref vh,
 								ShadowProperties.GetCenterOffset(pixelRect.center, i),
 								radius,
@@ -189,7 +189,7 @@ namespace ThisOtherThing.UI.Shapes
 						}
 						else
 						{
-							ShapeUtils.Lines.AddLine(
+							Lines.AddLine(
 								ref vh,
 								LineProperties,
 								PointListProperties,
@@ -240,7 +240,7 @@ namespace ThisOtherThing.UI.Shapes
 						radius.y *= 2.0f;
 					}
 
-					ShapeUtils.Arcs.AddSegment(
+					Arcs.AddSegment(
 						ref vh,
 						pixelRect.center,
 						radius,
@@ -254,9 +254,9 @@ namespace ThisOtherThing.UI.Shapes
 				}
 				else
 				{
-					if (LineProperties.LineCap == ShapeUtils.Lines.LineProperties.LineCapTypes.Close)
+					if (LineProperties.LineCap == Lines.LineProperties.LineCapTypes.Close)
 					{
-						ShapeUtils.Arcs.AddArcRing(
+						Arcs.AddArcRing(
 							ref vh,
 							pixelRect.center,
 							radius,
@@ -271,7 +271,7 @@ namespace ThisOtherThing.UI.Shapes
 					}
 					else
 					{
-						ShapeUtils.Lines.AddLine(
+						Lines.AddLine(
 							ref vh,
 							LineProperties,
 							PointListProperties,

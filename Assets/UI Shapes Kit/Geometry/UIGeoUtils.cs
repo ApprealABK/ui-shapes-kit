@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using MinAttribute = ThisOtherThing.Utils.MinAttribute;
+using MinAttribute = ThisOtherThing.Appreal.UI_ShapesKit.Utils.MinAttribute;
 
-namespace ThisOtherThing.UI
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	public class GeoUtils
 	{

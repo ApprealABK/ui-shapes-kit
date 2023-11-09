@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	[AddComponentMenu("UI/Shapes/Sector", 50)]
     [RequireComponent(typeof(CanvasRenderer))]
@@ -11,11 +11,11 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();
 
-		public ShapeUtils.Ellipses.EllipseProperties EllipseProperties =
-			new ShapeUtils.Ellipses.EllipseProperties();
+		public Ellipses.EllipseProperties EllipseProperties =
+			new Ellipses.EllipseProperties();
 
-		public ShapeUtils.Arcs.ArcProperties ArcProperties = 
-			new ShapeUtils.Arcs.ArcProperties();
+		public Arcs.ArcProperties ArcProperties = 
+			new Arcs.ArcProperties();
 
 		public GeoUtils.ShadowsProperties ShadowProperties = new GeoUtils.ShadowsProperties();
 
@@ -49,7 +49,7 @@ namespace ThisOtherThing.UI.Shapes
 
 			pixelRect = RectTransformUtility.PixelAdjustRect(rectTransform, canvas);
 
-			ShapeUtils.Ellipses.SetRadius(
+			Ellipses.SetRadius(
 				ref radius,
 				pixelRect.width,
 				pixelRect.height,
@@ -72,7 +72,7 @@ namespace ThisOtherThing.UI.Shapes
 						AntiAliasingProperties.Adjusted
 					);
 
-					ShapeUtils.Arcs.AddSegment(
+					Arcs.AddSegment(
 						ref vh,
 						ShadowProperties.GetCenterOffset(pixelRect.center, i),
 						radius,
@@ -102,7 +102,7 @@ namespace ThisOtherThing.UI.Shapes
 					edgeGradientData.Reset();
 				}
 
-				ShapeUtils.Arcs.AddSegment(
+				UI_ShapesKit.Arcs.AddSegment(
 					ref vh,
 					(Vector3)pixelRect.center,
 					radius,

@@ -4,9 +4,7 @@ using UnityEngine.EventSystems;
 
 using UnityEditor;
 
-using ThisOtherThing.UI.Shapes;
-
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     public class MenuItems
     {

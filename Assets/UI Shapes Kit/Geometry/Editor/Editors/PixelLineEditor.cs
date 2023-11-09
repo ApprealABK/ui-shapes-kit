@@ -2,9 +2,7 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using PixelLine = ThisOtherThing.UI.Shapes.PixelLine;
-
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(PixelLine))]
     [CanEditMultipleObjects]

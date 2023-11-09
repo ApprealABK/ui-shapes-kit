@@ -7,7 +7,7 @@ using System;
 
 namespace io.github.apprealabk.ui.shapes.kit
 {
-    [CustomEditor(typeof(ThisOtherThing.Utils.Animation.ValueSetter2))]
+    [CustomEditor(typeof(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter2))]
     public class FunctionDemoEditor2 : Editor
     {
         static FieldInfo[] targetFields;
@@ -44,8 +44,8 @@ namespace io.github.apprealabk.ui.shapes.kit
         {
             //		DrawDefaultInspector();
 
-            ThisOtherThing.Utils.Animation.ValueSetter2 obj = target as ThisOtherThing.Utils.Animation.ValueSetter2;
-            var targetType = obj.gameObject.GetComponent<ThisOtherThing.UI.Shapes.IShape>().GetType();
+            ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter2 obj = target as ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter2;
+            var targetType = obj.gameObject.GetComponent<ThisOtherThing.Appreal.UI_ShapesKit.IShape>().GetType();
 
             obj.FieldType = EditorGUILayout.Popup(obj.FieldType, fieldTypes);
 
@@ -78,10 +78,10 @@ namespace io.github.apprealabk.ui.shapes.kit
             }
 
             var targetFieldInfos = targetType
-                .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding);
+                .GetFields(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding);
 
             targetFieldNames = targetFieldInfos
-                .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing"))
+                .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing.Appreal.UI_ShapesKit"))
                 .Select(x => x.Name.ToString())
                 .ToArray();
 
@@ -99,7 +99,7 @@ namespace io.github.apprealabk.ui.shapes.kit
 
                 // set field data
                 var fields = targetFieldInfos[targetFieldIndex].FieldType
-                    .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding) // Instance methods, both public and private/protected
+                    .GetFields(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding) // Instance methods, both public and private/protected
                     .Where(x => !x.Name.Contains("Adjusted"));
 
                 if (obj.IsInArray)
@@ -136,7 +136,7 @@ namespace io.github.apprealabk.ui.shapes.kit
                     Type arrayFieldType = fieldNameInfo.FieldType.GetElementType();
 
                     string[] arrayFieldNames = arrayFieldType
-                        .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .GetFields(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding)
                         .Where(x => x.FieldType == fieldType)
                         .Select(x => x.Name)
                         .ToArray();
@@ -155,9 +155,9 @@ namespace io.github.apprealabk.ui.shapes.kit
                         int targetClassFieldIndex = 0;
 
                         var targetClassFields = arrayFieldType
-                            .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                            .GetFields(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding)
                             .Where(x => x.FieldType.IsClass)
-                            .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing"));
+                            .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing.Appreal.UI_ShapesKit"));
 
                         string[] targetClassFieldNames = targetClassFields
                             .Select(x => x.Name)
@@ -170,9 +170,9 @@ namespace io.github.apprealabk.ui.shapes.kit
                             obj.TargetClassFieldName = targetClassFieldNames[EditorGUILayout.Popup(targetClassFieldIndex, targetClassFieldNames)];
 
                             var classFieldNames = arrayFieldType.
-                                GetField(obj.TargetClassFieldName, ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                                GetField(obj.TargetClassFieldName, ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding)
                                 .FieldType
-                                .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                                .GetFields(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding)
                                 .Where(x => x.FieldType == fieldType)
                                 .Select(x => x.Name)
                                 .ToArray();
@@ -191,9 +191,9 @@ namespace io.github.apprealabk.ui.shapes.kit
                     Type targetFieldType = targetFieldInfos[targetFieldIndex].FieldType;
 
                     var fieldNames = targetFieldType
-                        .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .GetFields(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding)
                         .Where(x => x.FieldType.IsClass)
-                        .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing"))
+                        .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing.Appreal.UI_ShapesKit"))
                         .Select(x => x.Name)
                         .ToArray();
 
@@ -205,9 +205,9 @@ namespace io.github.apprealabk.ui.shapes.kit
                     obj.TargetClassFieldName = fieldNames[EditorGUILayout.Popup(index, fieldNames)];
 
                     fieldNames = targetFieldInfos[targetFieldIndex].FieldType
-                        .GetField(obj.TargetClassFieldName, ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .GetField(obj.TargetClassFieldName, ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding)
                         .FieldType
-                        .GetFields(ThisOtherThing.Utils.Animation.ValueSetter.binding)
+                        .GetFields(ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation.ValueSetter.binding)
                         .Where(x => x.FieldType == fieldType)
                         .Select(x => x.Name)
                         .ToArray();

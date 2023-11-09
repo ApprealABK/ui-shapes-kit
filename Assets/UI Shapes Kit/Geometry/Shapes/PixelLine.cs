@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	[AddComponentMenu("UI/Shapes/Pixel Line", 100)]
     [RequireComponent(typeof(CanvasRenderer))]
@@ -91,7 +91,7 @@ namespace ThisOtherThing.UI.Shapes
 					throw new System.ArgumentOutOfRangeException ();
 			}
 
-			ShapeUtils.Rects.AddRect(
+			UI_ShapesKit.Rects.AddRect(
 				ref vh,
 				center,
 				width,

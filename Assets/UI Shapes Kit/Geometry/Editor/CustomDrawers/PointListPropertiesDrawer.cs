@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using PointListProperties = ThisOtherThing.UI.ShapeUtils.PointsList.PointListProperties;
-using PointListGeneratorData = ThisOtherThing.UI.ShapeUtils.PointsList.PointListGeneratorData;
+using PointListProperties = ThisOtherThing.Appreal.UI_ShapesKit.PointsList.PointListProperties;
+using PointListGeneratorData = ThisOtherThing.Appreal.UI_ShapesKit.PointsList.PointListGeneratorData;
 
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(PointListProperties))]
     public class PointListPropertiesDrawer : PropertyDrawer
@@ -592,7 +592,7 @@ namespace io.github.apprealabk.ui.shapes.kit
 
         bool RunPolygonWarning(SerializedProperty property, Rect position)
         {
-            var polygon = property.serializedObject.targetObject as ThisOtherThing.UI.Shapes.Polygon;
+            var polygon = property.serializedObject.targetObject as Polygon;
 
             if (polygon != null)
             {

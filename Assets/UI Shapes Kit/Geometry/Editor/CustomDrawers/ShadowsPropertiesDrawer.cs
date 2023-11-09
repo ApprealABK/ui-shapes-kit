@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using ShadowsProperties = ThisOtherThing.UI.GeoUtils.ShadowsProperties;
-using ShadowProperties = ThisOtherThing.UI.GeoUtils.ShadowProperties;
+using ShadowsProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.ShadowsProperties;
+using ShadowProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.ShadowProperties;
 
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(ShadowsProperties))]
     public class ShadowsPropertiesDrawer : PropertyDrawer

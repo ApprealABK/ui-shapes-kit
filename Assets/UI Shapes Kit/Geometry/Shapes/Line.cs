@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	[AddComponentMenu("UI/Shapes/Line", 30)]
     [RequireComponent(typeof(CanvasRenderer))]
@@ -11,11 +11,11 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();
 
-		public ShapeUtils.PointsList.PointListsProperties PointListsProperties =
-			new ShapeUtils.PointsList.PointListsProperties();
+		public PointsList.PointListsProperties PointListsProperties =
+			new PointsList.PointListsProperties();
 
-		public ShapeUtils.Lines.LineProperties LineProperties = 
-			new ShapeUtils.Lines.LineProperties();
+		public Lines.LineProperties LineProperties = 
+			new Lines.LineProperties();
 
 		public GeoUtils.OutlineProperties OutlineProperties = 
 			new GeoUtils.OutlineProperties();
@@ -27,8 +27,8 @@ namespace ThisOtherThing.UI.Shapes
 
 		public Sprite Sprite;
 
-		ShapeUtils.PointsList.PointsData[] pointsListData =
-			new ThisOtherThing.UI.ShapeUtils.PointsList.PointsData[] { new ShapeUtils.PointsList.PointsData()};
+		PointsList.PointsData[] pointsListData =
+			new PointsList.PointsData[] { new PointsList.PointsData()};
 		
 		GeoUtils.EdgeGradientData edgeGradientData;
 
@@ -100,7 +100,7 @@ namespace ThisOtherThing.UI.Shapes
 								AntiAliasingProperties.Adjusted
 							);
 
-							ShapeUtils.Lines.AddLine(
+							UI_ShapesKit.Lines.AddLine(
 								ref vh,
 								LineProperties,
 								PointListsProperties.PointListProperties[i],
@@ -138,7 +138,7 @@ namespace ThisOtherThing.UI.Shapes
 							edgeGradientData.Reset();
 						}
 
-						ShapeUtils.Lines.AddLine(
+						UI_ShapesKit.Lines.AddLine(
 							ref vh,
 							LineProperties,
 							PointListsProperties.PointListProperties[i],

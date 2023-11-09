@@ -2,9 +2,7 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using Rectangle = ThisOtherThing.UI.Shapes.Rectangle;
-
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Rectangle))]
     [CanEditMultipleObjects]

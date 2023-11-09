@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using LineProperties = ThisOtherThing.UI.ShapeUtils.Lines.LineProperties;
+using LineProperties = ThisOtherThing.Appreal.UI_ShapesKit.Lines.LineProperties;
 
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(LineProperties))]
     public class LinePropertiesDrawer : PropertyDrawer

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 	[AddComponentMenu("UI/Shapes/Rectangle", 1)]
     [RequireComponent(typeof(CanvasRenderer))]
@@ -12,11 +12,11 @@ namespace ThisOtherThing.UI.Shapes
 		public GeoUtils.OutlineShapeProperties ShapeProperties =
 			new GeoUtils.OutlineShapeProperties();
 
-		public ShapeUtils.RoundedRects.RoundedProperties RoundedProperties = 
-			new ShapeUtils.RoundedRects.RoundedProperties();
+		public RoundedRects.RoundedProperties RoundedProperties = 
+			new RoundedRects.RoundedProperties();
 
-		public UI.GeoUtils.OutlineProperties OutlineProperties =
-			new UI.GeoUtils.OutlineProperties();
+		public GeoUtils.OutlineProperties OutlineProperties =
+			new GeoUtils.OutlineProperties();
 
 		public GeoUtils.ShadowsProperties ShadowProperties = new GeoUtils.ShadowsProperties();
 
@@ -25,8 +25,8 @@ namespace ThisOtherThing.UI.Shapes
 
 		public Sprite Sprite;
 
-		ShapeUtils.RoundedRects.RoundedCornerUnitPositionData unitPositionData;
-		UI.GeoUtils.EdgeGradientData edgeGradientData;
+		RoundedRects.RoundedCornerUnitPositionData unitPositionData;
+		GeoUtils.EdgeGradientData edgeGradientData;
 
 		public void ForceMeshUpdate()
 		{
@@ -68,7 +68,7 @@ namespace ThisOtherThing.UI.Shapes
 							AntiAliasingProperties.Adjusted
 						);
 
-						ShapeUtils.RoundedRects.AddRoundedRect(
+						RoundedRects.AddRoundedRect(
 							ref vh,
 							ShadowProperties.GetCenterOffset(pixelRect.center, i),
 							pixelRect.width,
@@ -98,7 +98,7 @@ namespace ThisOtherThing.UI.Shapes
 					edgeGradientData.Reset();
 				}
 
-				ShapeUtils.RoundedRects.AddRoundedRect(
+				RoundedRects.AddRoundedRect(
 					ref vh,
 					pixelRect.center,
 					pixelRect.width,
@@ -124,7 +124,7 @@ namespace ThisOtherThing.UI.Shapes
 							AntiAliasingProperties.Adjusted
 						);
 
-						ShapeUtils.RoundedRects.AddRoundedRectLine(
+						RoundedRects.AddRoundedRectLine(
 							ref vh,
 							ShadowProperties.GetCenterOffset(pixelRect.center, i),
 							pixelRect.width,
@@ -156,7 +156,7 @@ namespace ThisOtherThing.UI.Shapes
 					edgeGradientData.Reset();
 				}
 
-				ShapeUtils.RoundedRects.AddRoundedRectLine(
+				RoundedRects.AddRoundedRectLine(
 					ref vh,
 					pixelRect.center,
 					pixelRect.width,
@@ -164,7 +164,7 @@ namespace ThisOtherThing.UI.Shapes
 					OutlineProperties,
 					RoundedProperties,
 					ShapeProperties.OutlineColor,
-					UI.GeoUtils.ZeroV2,
+					GeoUtils.ZeroV2,
 					ref unitPositionData,
 					edgeGradientData
 				);

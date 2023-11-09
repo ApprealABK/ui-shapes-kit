@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using RoundingProperties = ThisOtherThing.UI.GeoUtils.RoundingProperties;
+using RoundingProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
 
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(RoundingProperties))]
     public class RoundingPropertiesDrawer : PropertyDrawer

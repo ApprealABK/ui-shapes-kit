@@ -2,9 +2,7 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using Arc = ThisOtherThing.UI.Shapes.Arc;
-
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Arc))]
     [CanEditMultipleObjects]
@@ -62,7 +60,7 @@ namespace io.github.apprealabk.ui.shapes.kit
             {
                 EditorGUILayout.PropertyField(lineCapProp);
 
-                if (lineCapProp.enumValueIndex == (int)ThisOtherThing.UI.ShapeUtils.Lines.LineProperties.LineCapTypes.Round)
+                if (lineCapProp.enumValueIndex == (int)Lines.LineProperties.LineCapTypes.Round)
                 {
                     EditorGUILayout.PropertyField(CapRoundingPropertiesProp);
                 }

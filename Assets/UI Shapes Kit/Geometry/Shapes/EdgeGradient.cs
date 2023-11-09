@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-namespace ThisOtherThing.UI.Shapes
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
 
 	[AddComponentMenu("UI/Shapes/Edge Gradient", 100)]
@@ -62,7 +62,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMin;
 						topLeft.y = pixelRect.yMax;
 
-						ShapeUtils.Rects.AddVerticalTwoColorRect(
+						UI_ShapesKit.Rects.AddVerticalTwoColorRect(
 							ref vh,
 							topLeft,
 							Properties[i].Size,
@@ -77,7 +77,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMin;
 						topLeft.y = pixelRect.yMin + Properties[i].Size;
 
-						ShapeUtils.Rects.AddVerticalTwoColorRect(
+						UI_ShapesKit.Rects.AddVerticalTwoColorRect(
 							ref vh,
 							topLeft,
 							Properties[i].Size,
@@ -92,7 +92,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMin;
 						topLeft.y = pixelRect.yMax;
 
-						ShapeUtils.Rects.AddHorizontalTwoColorRect(
+						UI_ShapesKit.Rects.AddHorizontalTwoColorRect(
 							ref vh,
 							topLeft,
 							pixelRect.height,
@@ -107,7 +107,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMax - Properties[i].Size;
 						topLeft.y = pixelRect.yMax;
 
-						ShapeUtils.Rects.AddHorizontalTwoColorRect(
+						UI_ShapesKit.Rects.AddHorizontalTwoColorRect(
 							ref vh,
 							topLeft,
 							pixelRect.height,
@@ -122,7 +122,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMin;
 						topLeft.y = pixelRect.yMax + Properties[i].Size;
 
-						ShapeUtils.Rects.AddVerticalTwoColorRect(
+						UI_ShapesKit.Rects.AddVerticalTwoColorRect(
 							ref vh,
 							topLeft,
 							Properties[i].Size,
@@ -137,7 +137,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMin;
 						topLeft.y = pixelRect.yMin;
 
-						ShapeUtils.Rects.AddVerticalTwoColorRect(
+						UI_ShapesKit.Rects.AddVerticalTwoColorRect(
 							ref vh,
 							topLeft,
 							Properties[i].Size,
@@ -152,7 +152,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMin - Properties[i].Size;
 						topLeft.y = pixelRect.yMax;
 
-						ShapeUtils.Rects.AddHorizontalTwoColorRect(
+						UI_ShapesKit.Rects.AddHorizontalTwoColorRect(
 							ref vh,
 							topLeft,
 							pixelRect.height,
@@ -167,7 +167,7 @@ namespace ThisOtherThing.UI.Shapes
 						topLeft.x = pixelRect.xMax;
 						topLeft.y = pixelRect.yMax;
 
-						ShapeUtils.Rects.AddHorizontalTwoColorRect(
+						UI_ShapesKit.Rects.AddHorizontalTwoColorRect(
 							ref vh,
 							topLeft,
 							pixelRect.height,

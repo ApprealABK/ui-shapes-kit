@@ -2,9 +2,9 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using Line = ThisOtherThing.UI.Shapes.Line;
+using Line = ThisOtherThing.Appreal.UI_ShapesKit.Line;
 
-namespace io.github.apprealabk.ui.shapes.kit
+namespace ThisOtherThing.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Line))]
     [CanEditMultipleObjects]
@@ -12,7 +12,7 @@ namespace io.github.apprealabk.ui.shapes.kit
     {
         Line linearLine;
 
-        ThisOtherThing.UI.ShapeUtils.PointsList.PointListsProperties pointListsProperties;
+        PointsList.PointListsProperties pointListsProperties;
         RectTransform rectTransform;
 
         protected SerializedProperty materialProp;
@@ -79,7 +79,7 @@ namespace io.github.apprealabk.ui.shapes.kit
             {
                 if (
                     pointListsProperties.PointListProperties[i].ShowHandles &&
-                    pointListsProperties.PointListProperties[i].GeneratorData.Generator == ThisOtherThing.UI.ShapeUtils.PointsList.PointListGeneratorData.Generators.Custom
+                    pointListsProperties.PointListProperties[i].GeneratorData.Generator == PointsList.PointListGeneratorData.Generators.Custom
                 )
                 {
                     if (PointListDrawer.Draw(
