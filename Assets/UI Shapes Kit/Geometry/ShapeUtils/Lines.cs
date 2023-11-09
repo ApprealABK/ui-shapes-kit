@@ -3,9 +3,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-using RoundingProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
+using RoundingProperties = Co.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
 	public class Lines
 	{

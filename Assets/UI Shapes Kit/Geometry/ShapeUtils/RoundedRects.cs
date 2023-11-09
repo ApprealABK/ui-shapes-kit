@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-using RoundedCornerProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
+using RoundedCornerProperties = Co.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
 	public class RoundedRects
 	{

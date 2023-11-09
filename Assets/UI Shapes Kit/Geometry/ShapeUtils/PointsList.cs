@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-using RoundingProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
-using MinAttribute = ThisOtherThing.Appreal.UI_ShapesKit.Utils.MinAttribute;
+using RoundingProperties = Co.Appreal.UI_ShapesKit.GeoUtils.RoundingProperties;
+using MinAttribute = Co.Appreal.UI_ShapesKit.Utils.MinAttribute;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
 	public class PointsList
 	{

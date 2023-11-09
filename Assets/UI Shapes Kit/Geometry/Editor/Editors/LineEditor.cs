@@ -2,9 +2,9 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-using Line = ThisOtherThing.Appreal.UI_ShapesKit.Line;
+using Line = Co.Appreal.UI_ShapesKit.Line;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Line))]
     [CanEditMultipleObjects]

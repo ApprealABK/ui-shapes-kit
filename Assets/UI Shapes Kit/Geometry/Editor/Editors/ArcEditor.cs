@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEditor.UI;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Arc))]
     [CanEditMultipleObjects]

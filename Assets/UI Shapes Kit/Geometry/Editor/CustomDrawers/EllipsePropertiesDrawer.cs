@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using EllipseProperties = ThisOtherThing.Appreal.UI_ShapesKit.Ellipses.EllipseProperties;
+using EllipseProperties = Co.Appreal.UI_ShapesKit.Ellipses.EllipseProperties;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(EllipseProperties))]
     public class EllipsePropertiesDrawer : PropertyDrawer

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Reflection;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit.Utils.Animation
+namespace Co.Appreal.UI_ShapesKit.Utils.Animation
 {
 	[ExecuteInEditMode]
 	public class ValueSetter : MonoBehaviour

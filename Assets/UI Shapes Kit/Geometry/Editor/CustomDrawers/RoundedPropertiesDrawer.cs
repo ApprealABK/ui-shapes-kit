@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using RoundedProperties = ThisOtherThing.Appreal.UI_ShapesKit.RoundedRects.RoundedProperties;
+using RoundedProperties = Co.Appreal.UI_ShapesKit.RoundedRects.RoundedProperties;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(RoundedProperties))]
     public class RoundedPropertiesDrawer : PropertyDrawer

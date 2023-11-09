@@ -5,7 +5,7 @@ using System.Collections;
 using System.Reflection;
 using System;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
     [CustomEditor(typeof(Utils.Animation.ValueSetter))]
     public class FunctionDemoEditor : Editor
@@ -81,7 +81,7 @@ namespace ThisOtherThing.Appreal.UI_ShapesKit
                 .GetFields(Utils.Animation.ValueSetter.binding);
 
             targetFieldNames = targetFieldInfos
-                .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing.Appreal.UI_ShapesKit"))
+                .Where(x => x.FieldType.Namespace.StartsWith("Co.Appreal.UI_ShapesKit"))
                 .Select(x => x.Name.ToString())
                 .ToArray();
 
@@ -157,7 +157,7 @@ namespace ThisOtherThing.Appreal.UI_ShapesKit
                         var targetClassFields = arrayFieldType
                             .GetFields(Utils.Animation.ValueSetter.binding)
                             .Where(x => x.FieldType.IsClass)
-                            .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing.Appreal.UI_ShapesKit"));
+                            .Where(x => x.FieldType.Namespace.StartsWith("Co.Appreal.UI_ShapesKit"));
 
                         string[] targetClassFieldNames = targetClassFields
                             .Select(x => x.Name)
@@ -193,7 +193,7 @@ namespace ThisOtherThing.Appreal.UI_ShapesKit
                     var fieldNames = targetFieldType
                         .GetFields(Utils.Animation.ValueSetter.binding)
                         .Where(x => x.FieldType.IsClass)
-                        .Where(x => x.FieldType.Namespace.StartsWith("ThisOtherThing.Appreal.UI_ShapesKit"))
+                        .Where(x => x.FieldType.Namespace.StartsWith("Co.Appreal.UI_ShapesKit"))
                         .Select(x => x.Name)
                         .ToArray();
 

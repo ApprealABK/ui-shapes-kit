@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using ShapeProperties = ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils.ShapeProperties;
+using ShapeProperties = Co.Appreal.UI_ShapesKit.GeoUtils.ShapeProperties;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(ShapeProperties))]
     public class ShapePropertiesDrawer : PropertyDrawer

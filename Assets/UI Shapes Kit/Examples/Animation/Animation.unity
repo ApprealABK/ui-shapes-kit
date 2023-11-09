@@ -833,7 +833,7 @@ MonoBehaviour:
   IsInArray: 1
   ArrayItemIndex: 0
   IsInClass: 1
-  TargetTypeName: ThisOtherThing.UI.ShapeUtils.PointsList+PointListsProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.PointsList+PointListsProperties
   TargetFieldName: PointListsProperties
   FieldName: PointListProperties
   ArrayFieldName: MaxAngle
@@ -2732,9 +2732,9 @@ MonoBehaviour:
         InnerScaler: 0.8
         OuterScaler: 0.5
       Positions:
-      - {x: -19.99999, y: 5.999999}
+      - {x: -19.99999, y: 6.000005}
       - {x: 0, y: -17.119938}
-      - {x: 19.99999, y: 5.999999}
+      - {x: 19.99999, y: 6.000005}
       MaxAngle: 0
       RoundingDistance: 0
       CornerRounding:
@@ -2751,7 +2751,7 @@ MonoBehaviour:
       ResolutionMaxDistance: 4
   OutlineProperties:
     Type: 1
-    LineWeight: 0
+    LineWeight: 40
   ShadowProperties:
     ShowShape: 1
     ShowShadows: 0
@@ -2792,12 +2792,12 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.GeoUtils+OutlineProperties
-  TargetFieldName: OutlineProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.Lines+LineProperties
+  TargetFieldName: LineProperties
   FieldName: LineWeight
   ArrayFieldName: 
-  TargetClassFieldName: 
-  ClassFieldName: 
+  TargetClassFieldName: RoundedCapResolution
+  ClassFieldName: ResolutionMaxDistance
   FloatValue: 0
   ColorValue: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &990914141
@@ -2964,7 +2964,7 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 1
-  TargetTypeName: ThisOtherThing.UI.ShapeUtils.Polygons+PolygonProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.Polygons+PolygonProperties
   TargetFieldName: PolygonProperties
   FieldName: 
   ArrayFieldName: 
@@ -4105,7 +4105,7 @@ MonoBehaviour:
   IsInArray: 1
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.GeoUtils+ShadowsProperties
+  TargetTypeName: ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils+ShadowsProperties
   TargetFieldName: ShadowProperties
   FieldName: Shadows
   ArrayFieldName: Softness
@@ -4129,7 +4129,7 @@ MonoBehaviour:
   IsInArray: 1
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.GeoUtils+ShadowsProperties
+  TargetTypeName: ThisOtherThing.Appreal.UI_ShapesKit.GeoUtils+ShadowsProperties
   TargetFieldName: ShadowProperties
   FieldName: Shadows
   ArrayFieldName: Size
@@ -4680,7 +4680,7 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.GeoUtils+ShadowsProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.GeoUtils+ShadowsProperties
   TargetFieldName: ShadowProperties
   FieldName: Angle
   ArrayFieldName: 
@@ -5462,7 +5462,7 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.GeoUtils+OutlineProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.GeoUtils+OutlineProperties
   TargetFieldName: OutlineProperties
   FieldName: LineWeight
   ArrayFieldName: 
@@ -6284,7 +6284,7 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.ShapeUtils.RoundedRects+RoundedProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.RoundedRects+RoundedProperties
   TargetFieldName: RoundedProperties
   FieldName: UniformRadius
   ArrayFieldName: 
@@ -6308,7 +6308,7 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.GeoUtils+OutlineShapeProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.GeoUtils+OutlineShapeProperties
   TargetFieldName: ShapeProperties
   FieldName: FillColor
   ArrayFieldName: 
@@ -6606,7 +6606,7 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.ShapeUtils.RoundedRects+RoundedProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.RoundedRects+RoundedProperties
   TargetFieldName: RoundedProperties
   FieldName: TRRadius
   ArrayFieldName: 
@@ -6630,7 +6630,7 @@ MonoBehaviour:
   IsInArray: 0
   ArrayItemIndex: 0
   IsInClass: 0
-  TargetTypeName: ThisOtherThing.UI.ShapeUtils.RoundedRects+RoundedProperties
+  TargetTypeName: Co.Appreal.UI_ShapesKit.RoundedRects+RoundedProperties
   TargetFieldName: RoundedProperties
   FieldName: BLRadius
   ArrayFieldName: 

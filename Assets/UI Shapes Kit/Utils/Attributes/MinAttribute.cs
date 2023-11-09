@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit.Utils
+namespace Co.Appreal.UI_ShapesKit.Utils
 {
 	public class MinAttribute : PropertyAttribute
 	{

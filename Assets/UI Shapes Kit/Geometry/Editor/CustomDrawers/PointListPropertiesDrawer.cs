@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-using PointListProperties = ThisOtherThing.Appreal.UI_ShapesKit.PointsList.PointListProperties;
-using PointListGeneratorData = ThisOtherThing.Appreal.UI_ShapesKit.PointsList.PointListGeneratorData;
+using PointListProperties = Co.Appreal.UI_ShapesKit.PointsList.PointListProperties;
+using PointListGeneratorData = Co.Appreal.UI_ShapesKit.PointsList.PointListGeneratorData;
 
-namespace ThisOtherThing.Appreal.UI_ShapesKit
+namespace Co.Appreal.UI_ShapesKit
 {
     [CustomPropertyDrawer(typeof(PointListProperties))]
     public class PointListPropertiesDrawer : PropertyDrawer
