@@ -5,6 +5,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /Packages/com.unity.asset-store-tools/*
+/.vsconfig/
 
 # Rendered output
 *.mov
